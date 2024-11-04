@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:RutujaC48/springcloud-config-repository.git
+          ignore-local-ssh-settings: true
+          strict-host-key-checking: false
+          search-paths:
+          - configuration/{application}/
+					- configuration/
+          private-key: 
+server:
+  port: 8888
+
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url: 
+			defaultZone: http://localhost:8080/eureka/
+      
